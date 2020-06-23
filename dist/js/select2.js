@@ -5464,6 +5464,7 @@ S2.define('select2/core',[
 
     $(document).on('keydown', function (evt) {
       var key = evt.which;
+      console.dir(self);
       if (self.isOpen()) {
         if (key === KEYS.ESC || (key === KEYS.UP && evt.altKey)) {
           self.close();
@@ -5506,8 +5507,10 @@ S2.define('select2/core',[
           }, 1000);
         }
       } else if (self.hasFocus()) {
-        if (key === KEYS.ENTER || key === KEYS.SPACE ||
-            key === KEYS.DOWN) {
+
+        if (key === KEYS.ENTER) {
+          console.log("This is a thing");
+          console.dir(self);
           self.open();
           evt.preventDefault();
         }
