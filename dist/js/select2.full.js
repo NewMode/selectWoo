@@ -5512,7 +5512,7 @@ S2.define('select2/core',[
           evt.preventDefault();
         }
       }
-    });
+    }, { once: true });
   };
 
   Select2.prototype.focusOnActiveElement = function () {

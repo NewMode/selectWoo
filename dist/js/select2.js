@@ -5508,14 +5508,13 @@ S2.define('select2/core',[
         }
       } else if (self.hasFocus()) {
 
-        if (key === KEYS.ENTER) {
-          console.log("This is a thing");
-          console.dir(self);
+        if (key === KEYS.ENTER || key === KEYS.SPACE ||
+          key === KEYS.DOWN) {
           self.open();
           evt.preventDefault();
         }
       }
-    });
+    }, { once: true });
   };
 
   Select2.prototype.focusOnActiveElement = function () {
